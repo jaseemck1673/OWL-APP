@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="owl_app_form_view" model="ir.ui.view">
+        <field name="name">owl.app.form</field>
+        <field name="model">owl.app</field>
+        <field name="arch" type="xml">
+            <form string="Form Title">
+                <widget name="example"/>
+                <!--                <header>-->
+                <!--                    &lt;!&ndash; Buttons and statusbar go here &ndash;&gt;-->
+                <!--                </header>-->
+                <!--                <sheet>-->
+                <!--                    <div class="oe_title">-->
+                <!--                        <h1>-->
+                <!--                            <field name="name"/>-->
+                <!--                        </h1>-->
+                <!--                    </div>-->
+                <!--                </sheet>-->
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="owl_app_action" model="ir.actions.act_window">
+        <field name="name">Owl App</field>
+        <field name="res_model">owl.app</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <record id="action_dragula_demo_board" model="ir.actions.client">
+        <field name="name">Dragula Board</field>
+        <field name="tag">dragula_demo.board</field>
+    </record>
+    <record id="action_reactflow_board" model="ir.actions.client">
+        <field name="name">Flow Chart Builder</field>
+        <field name="tag">reactflow_demo.board</field>
+    </record>
+</odoo>

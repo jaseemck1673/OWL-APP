@@ -1,0 +1,12 @@
+<templates>
+    <t t-name="owl_app.Child" owl="1">
+        <p>
+            <t t-out="props.title"/>
+        </p>
+        <ol>
+            <t t-foreach="props.list" t-as="item" t-key="item_index">
+                <li t-esc="item"/>
+            </t>
+        </ol>
+    </t>
+</templates>

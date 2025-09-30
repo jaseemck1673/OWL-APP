@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="reactflow_demo.ReactFlowBoard">
+        <div class="reactflow_wrapper">
+            <!-- Left Sidebar - Node Palette -->
+            <div class="reactflow_sidebar">
+                <h4><i class="fa fa-shapes"/> Node Palette</h4>
+                <div class="node_palette">
+                    <div class="palette_node" data-node-type="input" draggable="true"
+                         t-on-dragstart="onDragStart">
+                        <i class="fa fa-play-circle"/>
+                        <span>Start Node</span>
+                    </div>
+                    <div class="palette_node" data-node-type="default" draggable="true"
+                         t-on-dragstart="onDragStart">
+                        <i class="fa fa-square"/>
+                        <span>Process Node</span>
+                    </div>
+                    <div class="palette_node" data-node-type="output" draggable="true"
+                         t-on-dragstart="onDragStart">
+                        <i class="fa fa-stop-circle"/>
+                        <span>End Node</span>
+                    </div>
+                    <div class="palette_node" data-node-type="decision" draggable="true"
+                         t-on-dragstart="onDragStart">
+                        <i class="fa fa-code-branch"/>
+                        <span>Decision Node</span>
+                    </div>
+                </div>
+
+                <div class="sidebar_actions">
+                    <button class="btn btn-danger btn-block" t-on-click="clearFlow">
+                        <i class="fa fa-trash"/> Clear All
+                    </button>
+                    <button class="btn btn-success btn-block" t-on-click="saveFlow">
+                        <i class="fa fa-save"/> Save Flow
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Canvas Area -->
+            <div class="reactflow_main">
+                <div class="reactflow_header">
+                    <h3><i class="fa fa-sitemap"/> Flow Chart Builder</h3>
+                    <div class="flow_info">
+                        <span class="badge badge-primary">
+                            <i class="fa fa-circle"/> Nodes: <t t-esc="state.nodes.length"/>
+                        </span>
+                        <span class="badge badge-info">
+                            <i class="fa fa-arrow-right"/> Connections: <t t-esc="state.edges.length"/>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="reactflow_container"
+                     t-ref="flowContainer"
+                     t-on-drop="onDrop"
+                     t-on-dragover="onDragOver">
+                    <div class="reactflow_loading">
+                        <i class="fa fa-spinner fa-spin fa-3x"/>
+                        <p>Loading React Flow...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

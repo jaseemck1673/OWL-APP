@@ -1,0 +1,333 @@
+/* Main Wrapper */
+.reactflow_wrapper {
+    display: flex;
+    height: 100vh;
+    background: #f8f9fa;
+}
+
+/* Left Sidebar - Node Palette */
+.reactflow_sidebar {
+    width: 280px;
+    background: white;
+    border-right: 2px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+}
+
+.reactflow_sidebar h4 {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.node_palette {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.palette_node {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.palette_node:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-color: #007bff;
+}
+
+.palette_node:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+}
+
+.palette_node[data-node-type="input"] {
+    border-left: 4px solid #28a745;
+}
+
+.palette_node[data-node-type="default"] {
+    border-left: 4px solid #007bff;
+}
+
+.palette_node[data-node-type="output"] {
+    border-left: 4px solid #dc3545;
+}
+
+.palette_node[data-node-type="decision"] {
+    border-left: 4px solid #ffc107;
+}
+
+.palette_node i {
+    font-size: 24px;
+    width: 30px;
+    text-align: center;
+}
+
+.palette_node[data-node-type="input"] i {
+    color: #28a745;
+}
+
+.palette_node[data-node-type="default"] i {
+    color: #007bff;
+}
+
+.palette_node[data-node-type="output"] i {
+    color: #dc3545;
+}
+
+.palette_node[data-node-type="decision"] i {
+    color: #ffc107;
+}
+
+.palette_node span {
+    font-weight: 500;
+    font-size: 15px;
+    color: #212529;
+}
+
+.sidebar_actions {
+    padding: 20px;
+    border-top: 2px solid #dee2e6;
+    background: #f8f9fa;
+}
+
+.sidebar_actions button {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Main Canvas Area */
+.reactflow_main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.reactflow_header {
+    background: white;
+    padding: 20px 30px;
+    border-bottom: 2px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.reactflow_header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #212529;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flow_info {
+    display: flex;
+    gap: 15px;
+}
+
+.flow_info .badge {
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* React Flow Container */
+.reactflow_container {
+    flex: 1;
+    position: relative;
+    background: white;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Loading State */
+.reactflow_loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #6c757d;
+}
+
+.reactflow_loading i {
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.reactflow_loading p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* --- Custom Node Styles --- */
+
+/* Base style for the custom node wrapper */
+.custom-node {
+    /* Use position relative for delete button positioning */
+    position: relative;
+    cursor: move;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 12px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s;
+    min-width: 150px;
+}
+
+.custom-node:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.node-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+/* Custom Node Colors */
+
+.custom-input {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+}
+
+.custom-output {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border: none;
+}
+
+.custom-default {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+}
+
+.custom-decision {
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    color: #212529;
+    border: none;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    padding: 20px;
+}
+
+.custom-decision .node-content {
+    color: #212529;
+}
+
+/* --- Delete Button Styling --- */
+.node-delete-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.2s, transform 0.2s;
+    line-height: 1;
+    z-index: 10;
+}
+
+.node-delete-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+}
+
+/* Handle styles for custom nodes */
+.react-flow__handle {
+    border: 2px solid white;
+    background: black;
+}
+
+.react-flow__handle-top {
+    top: -5px;
+}
+
+.react-flow__handle-bottom {
+    bottom: -5px;
+}
+
+/* Edge Styles */
+.react-flow__edge-path {
+    stroke-width: 2;
+    stroke: #6c757d;
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+    stroke-dasharray: 5;
+    animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+/* Controls */
+.react-flow__controls {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+}
+
+/* Background */
+.react-flow__background {
+    background: #fafbfc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reactflow_wrapper {
+        flex-direction: column;
+    }
+
+    .reactflow_sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #dee2e6;
+        max-height: 40vh;
+    }
+
+    .reactflow_header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .flow_info {
+        width: 100%;
+    }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dragula_demo.DragulaBoard">
+        <div class="o_dragula_wrapper">
+            <div class="o_dragula_container">
+                <div class="o_dragula_column" t-ref="left">
+                    <div class="o_dragula_item">Item 1</div>
+                    <div class="o_dragula_item">Item 2</div>
+                </div>
+                <div class="o_dragula_column" t-ref="right">
+                    <div class="o_dragula_item">Item A</div>
+                    <div class="o_dragula_item">Item B</div>
+                </div>
+            </div>
+
+            <!-- Selected item display area -->
+            <div class="o_selected_display" t-ref="selectedDisplay">
+                <div class="o_selected_label">Selected Item:</div>
+                <div class="o_selected_text" t-ref="selectedText">
+                    <span class="text-muted">Click on any item to see its text here</span>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
