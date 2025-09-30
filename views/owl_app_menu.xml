@@ -6,20 +6,26 @@
               sequence="10"/>
 
     <!-- Sub Menu -->
-    <menuitem id="sub_menu"
-              name="Owl App"
-              parent="main_menu"
-              action="owl_app_action"
-              sequence="1"/>
+<!--    <menuitem id="sub_menu"-->
+<!--              name="Owl App"-->
+<!--              parent="main_menu"-->
+<!--              action="owl_app_action"-->
+<!--              sequence="1"/>-->
 
-    <menuitem id="menu_dragula_demo_board"
+<!--    <menuitem id="menu_dragula_demo_board"-->
+<!--              parent="main_menu"-->
+<!--              name="Board"-->
+<!--              sequence="2"-->
+<!--              action="action_dragula_demo_board"/>-->
+<!--     <menuitem id="menu_reactflow_board"-->
+<!--              name="Flow Chart Builder"-->
+<!--              parent="main_menu"-->
+<!--              action="action_reactflow_board"-->
+<!--              sequence="10"/>-->
+
+     <menuitem id="menu_workflow_builder_action"
+              name="Visual Builder"
               parent="main_menu"
-              name="Board"
-              sequence="2"
-              action="action_dragula_demo_board"/>
-     <menuitem id="menu_reactflow_board"
-              name="Flow Chart Builder"
-              parent="main_menu"
-              action="action_reactflow_board"
-              sequence="10"/>
+              action="action_workflow_builder"
+              sequence="1"/>
 </odoo>
